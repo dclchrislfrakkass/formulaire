@@ -8,33 +8,47 @@
     <title>Formulaire</title>
 </head>
 <body>
-    <div id="master">
-        <form>
-
-    <input type="text" name="name">
-
-    <input type="text" name="forname">
-
-    <input type="number" name="birthday">
-
-
-    <div id ="radio">
-        <input type="radio">
-
-    </div>
-    <input type="mail" name="mail">
-
-    <textarea id="message">
-
-
-    </textarea>
-
-
-    <div id="send">
+    <div id="myModal" class="modal">
+        
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Vous êtes MINEUR !</p>
+        </div>
         
     </div>
-
-</form>
+    <div id="master">
+        <form name="chrisForm">
+            
+            <input type="texte" name="name" placeholder="Nom">
+            
+            <input type="texte" name="forName" placeholder="Prénom" >
+            <div id="date">
+                <input type="date" id="birthday" name="birthday" value=""
+                min="1900-01-01" max="2018-12-31" required />
+                <span class="validity"></span>
+            </div>
+            
+            
+            <Form name="radio">
+                <p>
+                    <h1>Homme <input type="radio" name="gender" value="Homme"><br></h1> 
+                    <h1>Femme <input type="radio"name="gender" value="Femme"></h1>
+                </p>
+            </form>
+            <input type="mail"  name="mail" placeholder="E-mail"><br>
+            
+            <textarea id="message" name="message" data-parsley-maxlength="100" data-parsley-validation-threshold="10"></textarea>
+            
+            
+        </textarea>
+        <em>Votre message. 255 caractères maximum.</em> <div id="count">0/255.</div>
+        
+        
+        <div id="send" onclick="validateForm();">
+            Envoyer
+        </div>
+        
+    </form>
 </div>
 
 <script src="js/main.js"></script>
