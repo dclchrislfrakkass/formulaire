@@ -26,7 +26,7 @@ function validateForm() {
         alerted();
 
     } else {
-        document.forms["chrisForm"]["name"].style.border = "1px solid black";
+        document.forms["chrisForm"]["name"].style.border = "none";
         allOk();
     }
     y = document.forms["chrisForm"]["forName"].value;
@@ -34,7 +34,7 @@ function validateForm() {
         document.forms["chrisForm"]["forName"].style.border = "2px solid red";
         alerted();
     }else {
-        document.forms["chrisForm"]["forName"].style.border = "1px solid black";
+        document.forms["chrisForm"]["forName"].style.border = "none";
         allOk();
     }
     
@@ -102,7 +102,7 @@ function checkEmail() {
     
     var email = document.getElementById("mailText");
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    document.getElementById("mailText").style.border = "2px solid black";
+    document.getElementById("mailText").style.border = "none";
     allOk();
     
     if (!filter.test(email.value)) {
