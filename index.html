@@ -35,16 +35,18 @@
                     <h1>Femme <input type="radio"name="gender" value="Femme"></h1>
                 </p>
             </form>
-            <input type="mail"  name="mail" placeholder="E-mail"><br>
+            <input type="mail"  name="mail" id="mailText" placeholder="E-mail"><br>
             
+            <em>Votre message.</em>
             <textarea id="message" name="message" data-parsley-maxlength="100" data-parsley-validation-threshold="10"></textarea>
             
             
         </textarea>
-        <em>Votre message. 255 caractères maximum.</em> <div id="count">0/255.</div>
+        <div id="count">0/255.</div>
+        <em> 255 caractères maximum.</em>
         
         
-        <div id="send" onclick="validateForm();">
+        <div id="send" onclick="validateForm(); Javascript:checkEmail();">
             Envoyer
         </div>
         

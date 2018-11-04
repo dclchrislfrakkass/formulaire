@@ -2,7 +2,6 @@ var x;
 var y;
 var text;
 var modal = document.getElementById('myModal');     
-var mail = document.getElementById('mail').value;
 
 
 
@@ -19,11 +18,11 @@ function validateForm() {
     }else {
         document.forms["chrisForm"]["forName"].style.border = "1px solid black";
     }
-     
-    isValidDate();
-
-}
     
+    isValidDate();
+    
+}
+
 
 
 function isValidDate() {
@@ -75,18 +74,19 @@ function isValidDate() {
     }
 }
 
-function validateEmail(mail) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(mail);
-    console.log(mail);
+function checkEmail() {
+    
+    var email = document.getElementById("mailText");
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    document.getElementById("mailText").style.border = "2px solid black";
+    
+    if (!filter.test(email.value)) {
+        console.log("problème de mail !");
+        document.getElementById("mailText").style.border = "2px solid red";
+        email.focus;
+        return false;
     }
-
-    if(mail=='') {
-        alert('Vous devez compléter votre adresse email');
-        document.getElementById('mail').style.backgroundColor="red";
-        document.getElementById('mail').style.color="#FFF";
-       
-        }
+}
 
 
 
@@ -96,11 +96,13 @@ function validateEmail(mail) {
 
 
 
-
-
-
-
-
+//////////////////////////////////////////////////////////////////////////////
+////                                                                      ////
+////                                                                      ////
+////                         SCRAP                                        ////
+////                                                                      ////
+////                                                                      ////
+//////////////////////////////////////////////////////////////////////////////
 /*
 function checkAll(){
     // validateEmail();
