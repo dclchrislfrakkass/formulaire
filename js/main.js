@@ -2,21 +2,40 @@ var x;
 var y;
 var text;
 var modal = document.getElementById('myModal');     
+var textarea = document.querySelector("textarea");
+
+
+////function bonus -> red div alert on bottom ////
+function alerted(){
+document.getElementById("alert").style.border = "2px solid red";
+document.getElementById("alert").innerHTML= "Merci de corriger les erreurs";
+}
+function allOk(){
+    document.getElementById("alert").style.border = "none";
+    document.getElementById("alert").innerHTML= "";
+    }
 
 
 
+
+////test and validate name and forname ////    
 function validateForm() {
     x = document.forms["chrisForm"]["name"].value;
     if (x == "" || !isNaN(x)) {
         document.forms["chrisForm"]["name"].style.border = "2px solid red";
+        alerted();
+
     } else {
         document.forms["chrisForm"]["name"].style.border = "1px solid black";
+        allOk();
     }
     y = document.forms["chrisForm"]["forName"].value;
     if (y == ""|| !isNaN(y)) {
         document.forms["chrisForm"]["forName"].style.border = "2px solid red";
+        alerted();
     }else {
         document.forms["chrisForm"]["forName"].style.border = "1px solid black";
+        allOk();
     }
     
     isValidDate();
@@ -24,7 +43,7 @@ function validateForm() {
 }
 
 
-
+//// check and verify date of birth ////
 function isValidDate() {
     
     var born = document.forms["chrisForm"]["birthday"].value;
@@ -54,6 +73,9 @@ function isValidDate() {
     age = todayYear - bornYear;
     console.log(age);
     
+
+
+    ///// test if your under 18 and open a modal if not /////
     if (age <18) {
         // alert("vous êtes mineur !")
         btn();
@@ -74,22 +96,39 @@ function isValidDate() {
     }
 }
 
+
+//// check mail and verify caracters ////
 function checkEmail() {
     
     var email = document.getElementById("mailText");
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     document.getElementById("mailText").style.border = "2px solid black";
+    allOk();
     
     if (!filter.test(email.value)) {
         console.log("problème de mail !");
         document.getElementById("mailText").style.border = "2px solid red";
         email.focus;
+        alerted();
         return false;
     }
 }
 
 
+//// verify the message box and count number of caracters ////
 
+textarea.addEventListener("input", function(){
+    var maxlength = this.getAttribute("maxlength");
+    var currentLength = this.value.length;
+    console.log(currentLength);
+
+    if( (currentLength+1) == maxlength ){
+        console.log("STOP !!!! MAX");
+    }else{
+        document.getElementById("count").innerHTML = maxlength - currentLength;
+        console.log(maxlength - currentLength + " en stock");
+    }
+});
 
 
 

@@ -29,30 +29,32 @@
             </div>
             
             
-            <Form name="radio">
-                <p>
-                    <h1>Homme <input type="radio" name="gender" value="Homme"><br></h1> 
-                    <h1>Femme <input type="radio"name="gender" value="Femme"></h1>
-                </p>
-            </form>
+            <div id="choice">
+                <h1>Homme <input type="radio" name="gender" value="Homme"></h1> 
+                <h1>Femme <input type="radio"name="gender" value="Femme"></h1>
+            </div>
             <input type="mail"  name="mail" id="mailText" placeholder="E-mail"><br>
             
             <em>Votre message.</em>
-            <textarea id="message" name="message" data-parsley-maxlength="100" data-parsley-validation-threshold="10"></textarea>
+            <textarea id="message" name="message" maxlength="255"></textarea>
             
-            
-        </textarea>
-        <div id="count">0/255.</div>
-        <em> 255 caractères maximum.</em>
-        
-        
-        <div id="send" onclick="validateForm(); Javascript:checkEmail();">
-            Envoyer
+            <div id ="counter">
+                <div id="count">0</div>/255.</div><br>
+                <em> 255 caractères maximum.</em>
+                
+                
+                <div id="send" onclick="validateForm(); Javascript:checkEmail();">
+                    Envoyer
+                </div>
+                <div id="alert"></div>
+            </form>
         </div>
         
-    </form>
-</div>
+        <script src="js/main.js"></script>
+    </body>
+    <footer>
 
-<script src="js/main.js"></script>
-</body>
-</html>
+       
+
+    </footer>
+    </html>

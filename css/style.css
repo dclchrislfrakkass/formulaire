@@ -6,9 +6,7 @@ body {
     display: flex;
     margin: auto;
     text-align: center;
-}
-h1 {
-    font-size: 4vmax;
+    margin-top: 2vmax;
 }
 form {
     height: 80%;
@@ -26,32 +24,56 @@ input, textarea {
     margin: 1vmax;
     border : 1px solid black;
 }
+#choice {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5vmax;
+    
+}
+
+
 .date {
     display: inline-block;
-    height: vmax;
-
-  }
+    height: 6vmax;
+    
+}
 input:invalid+span:after {
     content: '✖';
     padding-left: 5px;
-  }
-  
-  input:valid+span:after {
+}
+
+input:valid+span:after {
     content: '✓';
     padding-left: 5px;
-  }
+}
+h1 {
+    font-size: 4vmax;
+    height: 4vmax;
+}
 
 textarea{
-    height: 6vmax;
+    height: 35vmax;
+}
+#counter {
+    display: flex;
+    padding-left: 70%;
 }
 #send {
+    margin :2vmax;
+    margin-top: 3vmax;
+    margin-bottom: 2vmax;
     border: 2px solid black;
     height: 5vmax;
     font-size: 4vmax;
 }
-
-
-
+#alert {
+    background-color: none;
+    border: none;
+    color: red;
+    font-size: 4vmax;
+}
 .modal {
     display: none;
     position: fixed;
